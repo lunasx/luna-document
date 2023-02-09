@@ -1,9 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
+:root {
+  --background: #1E1F21;
+  --childbg: #171819;
+  --primary: #F66D6D;
+  --primary-alpha: #AD5151;
+  --secondary: #b0b0b0;
+  --selection: #4e4e4e1e;
+  --content-border: #565758;
+}
+
 body {
     box-sizing: border-box;
-    background-color: #100c1b;
+    background-color: var(--background);
     color: rgba(255, 255, 255, 0.5);
     margin: 0;
     padding: 0;
@@ -13,7 +23,6 @@ body {
 .main {
     z-index: 50;
     display: flex;
-    flex-wrap: wrap;
     background-image: url("../img/star.png");
     background-size: 20px 20px;
     background-repeat: no-repeat;
@@ -21,14 +30,14 @@ body {
 }
 
 ::selection {
-    background: #dad3e618;
+    background: var(--selection);
 }
 
 /* sidebar */
 .sidebar {
     width: 180px;
     height: 100vh;
-    background-color: #18132A;
+    background-color: var(--childbg);
     border-top-right-radius: 20px;
 }
 
@@ -40,8 +49,8 @@ body {
 .sidebar .button {
     cursor: pointer;
     display: flex;
-    border: 5px solid #18132A;
-    background-color: #100c1b;
+    border: 5px solid var(--childbg);
+    background-color: var(--background);
     height: 30px;
 }
 
@@ -50,8 +59,8 @@ body {
     padding: 0;
     width: 4px;
     height: 30px;
-    background-color: #4B2395;
-    box-shadow: 5px 0 5px -5px #4B2395;
+    background-color: var(--primary);
+    box-shadow: 5px 0 5px -5px var(--primary);
 }
 
 .sidebar .button .left-detail {
@@ -60,26 +69,26 @@ body {
     padding: 0;
     width: 2px;
     height: 30px;
-    background-color: #4b239567;
-    box-shadow: 5px 0 5px -5px #4b239567;
+    background-color: var(--primary-alpha);
+    box-shadow: 5px 0 5px -5px var(--primary-alpha);
 }
 
 .sidebar .button i {
     transition: all 0.9s;
     position: fixed;
     padding: 7px 10px;
-    color: #4b239567;
+    color: var(--primary-alpha);
 }
 
 .sidebar .button:hover i {
-    color: #4B2395;
+    color: var(--primary);
 }
 
 .sidebar .button h5 {
     transition: all 0.9s;
     position: fixed;
     padding: 9px 30px;
-    color: #b0a4c7;
+    color: var(--secondary);
     margin: 0;
     font-size: 10px;
     font-weight: 300;
@@ -94,12 +103,11 @@ body {
 .content {
     margin: auto;
     margin-left: 50px;
-    width: calc(100% - 240px);
+    width: 100%;
     height: calc(100vh - 100px);
 }
 
 .content .title {
-    color: #b0a4c7;
     font-size: 1.4em;
     margin: 0;
     font-weight: 590;
@@ -109,7 +117,6 @@ body {
 .content .title i {
     transition: all 0.5s;
     cursor: pointer;
-    color: #b0a4c7;
     font-size: 0.7em;
     margin: 0;
     font-weight: 590;
@@ -117,7 +124,7 @@ body {
 }
 
 .content .title i:hover {
-    color: #e6dafd;
+    color: var(--content-border);
     font-size: 0.7em;
     margin: 0;
     font-weight: 590;
@@ -125,7 +132,7 @@ body {
 }
 
 .content .desc {
-    color: #d5c1f988;
+    color: var(--content-border);
     font-size: 0.8em;
     padding: 10px 0;
     margin: 0;
@@ -136,7 +143,7 @@ body {
 
 .content .card {
     border-radius: 10px;
-    border: 1px solid #18132A;
+    border: 1px solid var(--childbg);
     background: rgba(0, 0, 0, 0.193);
     font-size: 1.4em;
     width: 500px;
@@ -145,7 +152,7 @@ body {
 
 .content .card p {
     font-family: 'Source Code Pro', monospace;
-    color: #dad3e6;
+    color: var(--content-border);
     font-size: 0.45em;
     padding: 15px;
     margin: 0;
@@ -154,10 +161,10 @@ body {
 
 .content .note {
     border-radius: 10px;
-    border-left: 4px solid #d5c1f988;
-    border-right: 1px solid #18132A;
-    border-bottom: 1px solid #18132A;
-    border-top: 1px solid #18132A;
+    border-left: 4px solid var(--content-border);
+    border-right: 1px solid var(--childbg);
+    border-bottom: 1px solid var(--childbg);
+    border-top: 1px solid var(--childbg);
     background: rgba(0, 0, 0, 0.193);
     font-size: 1.4em;
     width: 500px;
@@ -165,7 +172,7 @@ body {
 }
 
 .content .note p {
-    color: #dad3e6;
+    color: var(--content-border);
     font-size: 0.6em;
     padding: 5px 0 15px 15px;
     margin: 0;
@@ -181,7 +188,7 @@ body {
 
 .content .note .title i {
     transition: all 0.5s;
-    color: #b0a4c7;
+    color: var(--secondary);
     font-size: 0.5em;
     margin: 0;
     font-weight: 0;
@@ -190,12 +197,12 @@ body {
 }
 
 .content .note .title i:hover {
-    color: #e6dafd;
+    color: var(--content-border);
 }
 
 .content .note .title a {
     transition: all 0.5s;
-    color: #b0a4c7;
+    color: var(--secondary);
     font-size: 0.45em;
     margin: 0;
     font-weight: 0;
